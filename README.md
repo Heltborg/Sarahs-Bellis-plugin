@@ -288,7 +288,7 @@ Det betyder, at jeg kan implementere plugin'et på alle sider ved at indsætte *
 5. Opret en ny side, eller find en eksisterende side, hvor du vil tilføje popup'en, og indsæt min shortcode `[sarah_bellis_popup]`i teksteditoren.
 6. Klik på "Apply" ved Shortcoden, udgiv siden, og vis den i browseren<br>
 
-Nu er mit plugin korrekt insalleret og klar til brug på dit WordPress site.
+Nu er mit plugin korrekt installeret og klar til brug på dit WordPress site.
 
 ---
 
