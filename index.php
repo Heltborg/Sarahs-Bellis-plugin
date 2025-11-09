@@ -49,7 +49,7 @@ function bellis_popup_box() {
     $content .= '<p>Hos Kulturbodega Bellis går nærvær og kreativitet hånd i hånd. <br> Vi fejrer livets øjeblikke, store som små, og tror på, at magien opstår, når vi connecter, creater og celebrater sammen.</p>';
 
     // Min CTA-knap
-    $content .= '<div class="button-holder"><button id="bellis-button">Bliv en del af fællesskabet</button></div>';
+    $content .= '<div class="button-holder"><button id="bellis-button">Oplev magien</button></div>';
 
     // Lukker popup-div
     $content .= '</div>';
