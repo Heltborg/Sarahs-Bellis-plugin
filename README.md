@@ -278,6 +278,16 @@ For at kunne vise mit plugin i WordPress har jeg oprettet en *shortcode* i min *
 
 Det betyder, at jeg kan implementere plugin'et på alle sider ved at indsætte *shortcoden* direkte i *teksteditoren* i WordPress. Når WordPress læser shortcoden, henter den det indhold, jeg har bygget i mit plugin. På den måde er det nemt at placere popup'en på lige præcis den side, hvor det giver mest mening.
 
+**Guide til aktivering af Plugin**<br>
+1. Download plugin-koden fra mit GitHub repository.
+2. Hvis filen bliver hentet som en ZIP-fil, skal den pakkes ud.
+3. Upload den udpakkede plugin-mappe fra din computer til WordPress-mappen `wp-content/plugins` *(gør det evt. via FileZilla)*.
+4. Log ind på din WordPress-side, gå til **Plugins** → **Installed Plugins** og aktivér `Sarah's Bellis Plugin`.
+5. Opret en ny side, eller find en eksisterende side, hvor du vil tilføje popup'en, og indsæt min shortcode `[sarah_bellis_popup]`i teksteditoren.
+6. Klik på "Apply" ved Shortcoden, udgiv siden, og vis den i browseren<br>
+
+Nu er mit plugin korrekt insalleret og klar til brug på dit WordPress site.
+
 ---
 
 ## Skitse, wireframe og mockup
