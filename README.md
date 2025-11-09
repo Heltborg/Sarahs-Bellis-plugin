@@ -37,6 +37,8 @@ sarah_bellis_plugin
 └── README.md
 ```
 
+---
+
 ### HTML og PHP
 #### Plugin header
 Jeg har startet min PHP-fil med en *plugin header*, som indeholder kommentarer, der fungerer som *metadata* for WordPress. Uden denne kommentarblok ville WordPress ikke læse filen som et plugin, men blot som en almindelig PHP-fil.
@@ -274,7 +276,7 @@ Her tilføjer og fjerner jeg CSS-klasser alt efter, hvordan brugeren interagerer
 ---
 
 ## Shortcode
-For at kunne vise mit plugin i WordPress har jeg oprettet en *shortcode* i min *PHP-fil*, hvor jeg har derfineret, at den skal hedde `[sarah_bellis_popup]`.
+For at kunne vise mit plugin i WordPress har jeg oprettet en *shortcode* i min *PHP-fil*, hvor jeg har defineret, at den skal hedde `[sarah_bellis_popup]`.
 
 Det betyder, at jeg kan implementere plugin'et på alle sider ved at indsætte *shortcoden* direkte i *teksteditoren* i WordPress. Når WordPress læser shortcoden, henter den det indhold, jeg har bygget i mit plugin. På den måde er det nemt at placere popup'en på lige præcis den side, hvor det giver mest mening.
 
