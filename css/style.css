@@ -1,0 +1,128 @@
+/* ---------------------- CONTAINER FOR HELE POP-UP ---------------------- */
+#bellis-container {
+    position: fixed;
+    top: 10%; /* Afstand fra toppen */
+    left: 50%; /* Venstre kant sættes midt på skærmen */
+    transform: translateX(-50%); /* Træk 50% af containerens bredde fra og sikrer dermed horisontal centrering */
+    z-index: 9999;
+    width: 100%;
+    max-width: 600px;
+    pointer-events: none;
+}
+
+/* ---------------------- MØRKT OVERLAY BAG POP-UP ---------------------- */
+#popup-overlay {
+  position: fixed;                /* Dækker hele skærmen uanset om brugeren scroller */
+  inset: 0;                       /* Top, bund, venstre, højre = 0 (giver fuld dækning) */
+  background: rgba(0, 0, 0, 0.45); /* Gennemsigtig sort baggrund */
+  backdrop-filter: blur(2px);     /* Lidt blur på baggrunden */
+  z-index: 9998;                  /* Ligger under pop-up-boksen, men over alt andet på siden */
+  opacity: 0;                     /* Starter usynlig */
+  transition: opacity 0.4s ease;  /* Glidende fade-effekt når overlay vises/skjules */
+  pointer-events: none;           /* Ignorér klik, indtil det bliver gjort aktivt */
+}
+
+/* -- Når popup er aktiv vises overlay -- */
+#popup-overlay.active {
+  opacity: 1;                     /* Gør overlay synligt */
+  pointer-events: all;            /* Gør overlay klikbart, så man kan lukke pop-up ved at trykke her */
+}
+
+/* ---------------------- EFFEKT NÅR POPUP VISES ---------------------- */
+/* -- Start-position for popup (skjult over toppen) -- */
+.slide-top {
+    transform: translateY(-150%) !important; /* Boksen skubbes langt over viewporten så den ikke kan ses */
+    opacity: 0 !important; /* Gør boksen usynlig */
+}
+
+/* -- Synlig position -- */
+.slide-down {
+    transform: translateY(0) !important; /* Flytter boksen ned på plads*/
+    opacity: 1 !important; /* Gør boksen synlig */
+}
+
+/* ---------------------- STYLING AF BOKSEN OG ELEMENTERNE DERI ---------------------- */
+/* -- Boksen -- */
+.bellis-box {
+    background: #F4F2EA;
+    border: 1px solid #BD3001; /* Den røde streg om boksen */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center; /* Centrer alt tekst og inline-elementer */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Skygge bag pop-up for let 3D effekt */
+    position: relative; /* Gør så luk-knap kan få en absolut positionering */
+    pointer-events: all; /* Boksen er klikbar */
+    transition: transform 0.6s ease, opacity 0.6s ease !important; /* Gliddende overgang */
+}
+
+/* -- Overskrift -- */
+.bellis-box h2 {
+    color: #BD3001 !important;
+    font-family: "Playfair Display", serif;
+    font-size: 30px !important;
+  	font-weight: bold;
+  	margin: 20px;
+    opacity: 0; /* Skjuler overskriften */
+  	transform: scale(0); /* Starter helt lille */
+  	transform-origin: center top; /* Teksten bliver synlig fra midten af toppen */
+}
+
+/* -- Effekt på overskriften -- */
+.bellis-box.slide-down h2 {
+  animation: h2ScaleIn 0.6s ease-out 1s forwards; /* Definerer og styler animationen af overskriften. Den køres efter 1 sek og varer 0.6 sek */
+}
+
+@keyframes h2ScaleIn {
+  from { opacity: 0; transform: scale(0); } /* Overskriften starter usynlig og lille */
+  to   { opacity: 1; transform: scale(1); } /* Overskriften slutter synlig og normal størrelse */
+}
+
+/* -- Video -- */
+.bellis-box video {
+    max-width: 80% !important;
+    height: auto; /* Justerer selv højden ift. bredden så proportionerne bevares */
+    margin: 10px 0; /* Margin i top og bund */
+}
+
+/* -- Tekst -- */
+.bellis-box p {
+    margin: 10px 0;
+    color: #BD3001;
+    font-family: "Poppins", sans-serif;
+  	font-size: 15px !important;
+  	padding: 10px 20px; /* 10px i top/bund, 20px højre/venstre */
+  	line-height: 1.8; /* Lidt ekstra luft mellem teksten */
+}
+
+/* -- Knap -- */
+.button-holder {
+    margin: 15px 0; /* Margin på top og bund */
+}
+
+.button-holder button {
+    font-family: "Poppins", sans-serif;
+  	font-size: 15px !important;
+    padding: 10px 20px; /* Luft inde i knappen */
+    background: #BD3001 !important;
+    color: #F4F2EA !important; /* Farve på teksten */
+    border: 2px solid #BD3001 !important;
+    border-radius: 30px !important;
+    cursor: pointer; /* Cursor bliver til en hånd ved hover */
+ 	transition: all 0.3s ease; /* Sikrer glidende overgang ved hover */
+}
+
+.button-holder button:hover {
+    background: #F4F2EA !important;
+    border: 2px solid #BD3001 !important;
+  	color: #BD3001 !important; /* Farve på teksten */
+}
+
+/* -- Luk knap -- */
+.bellis-close-button {
+    position: absolute; /* Placeres relativt til .bellis-box */
+    top: 10px;
+    right: 10px;
+    cursor: pointer; /* Cursor bliver til en hånd ved hover */
+    font-size: 20px;
+    color: #BD3001;
+}
