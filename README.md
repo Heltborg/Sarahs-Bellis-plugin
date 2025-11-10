@@ -65,7 +65,7 @@ Jeg starter med at oprette et mørkt overlay og gemme alt indholdet i PHP-variab
 ```php
     $content  = '<div id="popup-overlay"></div>'; 
 ```
-Ved alt efterfølgende HTML jeg definerer i funktionen, skriver jeg `.=`. Det betyder, at jeg tilføjer nyt indhold til den allerede eksisterende tekst, til min PHP-variabel, jeg startede med at definere.
+Ved alt efterfølgende HTML jeg definerer i funktionen, skriver jeg `.=`. Det betyder, at jeg tilføjer nyt indhold til min PHP-variabel, som jeg startede med at definere.
 
 Dernæst tilføjer jeg `$content .= '<div id="bellis-container">';` som fungerer som container for alt indholdet i min popup. Inde i denne `<div>` definerer jeg alt mit HTML-indhold til popup'en.
 
